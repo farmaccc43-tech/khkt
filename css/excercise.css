@@ -1,0 +1,62 @@
+/* Khung bài tập */
+.lesson-box {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.lesson-box h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #1d3dd8;
+}
+
+/* Câu hỏi */
+.lesson-box p {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Lựa chọn */
+.option {
+    display: block;
+    background: #f8f8f8;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.option:hover {
+    background: #eef3ff;
+    border-color: #1d3dd8;
+}
+
+/* Nút nộp bài */
+.btn-exercise {
+    display: block;
+    margin: 22px auto 0;
+    padding: 12px 25px;
+    font-size: 16px;
+    color: white;
+    background: #1d3dd8;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-exercise:hover {
+    background: #173bb8;
+}
+label {
+    display: block;
+    margin-bottom: 6px;
+    cursor: pointer;
+}

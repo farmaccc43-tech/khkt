@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang chủ - Các bài học</title>
+    <style>
+      /* ===============================
+           CHUNG
+        =============================== */
+      body {
+        font-family: Arial, sans-serif;
+        background: #f7f9fc;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px 0;
+      }
+
+      /* ===============================
+           HEADER
+        =============================== */
+      .site-header {
+        background: white;
+        padding: 15px 0;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo {
+        font-size: 32px;
+      }
+
+      .brand-title {
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      /* ===============================
+           PAGE TITLE
+        =============================== */
+      .page-title {
+        margin-top: 25px;
+        font-size: 28px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      /* ===============================
+           CHỦ ĐỀ
+        =============================== */
+      .lesson-topic {
+        margin-bottom: 40px;
+      }
+
+      .lesson-topic h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        color: #1d3dd8;
+        border-left: 4px solid #007bff;
+        padding-left: 10px;
+      }
+
+      /* ===============================
+           GRID BÀI HỌC
+        =============================== */
+      .lessons-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        gap: 20px;
+      }
+
+      .lesson-card {
+        background: white;
+        padding: 20px;
+        border-radius: 14px;
+        border: 1px solid #ddd;
+        cursor: pointer;
+        transition: 0.25s;
+      }
+
+      .lesson-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      }
+
+      .lesson-card.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .muted {
+        color: #666;
+        font-size: 14px;
+        margin: 5px 0 0 0;
+      }
+
+      .btn-outline {
+        display: inline-block;
+        margin-top: 10px;
+        border: 1px solid #007bff;
+        padding: 8px 14px;
+        border-radius: 6px;
+        color: #007bff;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .btn-outline:hover {
+        background: #007bff;
+        color: white;
+      }
+
+      /* ===============================
+           BACK HOME BUTTON
+        =============================== */
+      .back-home-btn {
+        display: inline-block;
+        margin: 20px 0;
+        padding: 10px 16px;
+        background: #1d3dd8;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 15px;
+        transition: 0.2s;
+      }
+
+      .back-home-btn:hover {
+        background: #1532b3;
+      }
+
+      /* ===============================
+           RESPONSIVE
+        =============================== */
+      @media (max-width: 600px) {
+        .page-title {
+          font-size: 22px;
+        }
+        .lesson-topic h2 {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <div class="logo">📘</div>
+          <div class="brand-title">Lịch Sử Online - Lớp 11</div>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <h1 class="page-title">📚 Danh sách bài học</h1>
+      <!-- Chủ đề 1 -->
+      <div class="lesson-topic">
+        <h2>Chủ đề 1: Cách mạng tư sản và sự phát triển của chủ nghĩa tư bản</h2>
+        <div class="lessons-grid">
+          <div class="lesson-card disabled">
+            <h3>Bài 1: Một số vấn đề chung về cách mạng tư sản</h3>
+            <p class="muted">⏱ 45 phút • 3 nhiệm vụ</p>
+            <a class="btn-outline">Sắp cập nhật</a> 
+          </div>
+
+          <div class="lesson-card disabled">
+            <h3>Bài 2: Sự xác lập và phát triển của chủ nghĩa tư bản</h3>
+            <p class="muted">⏱ 40 phút</p>
+            <a class="btn-outline">Sắp cập nhật</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chủ đề 2 -->
+      <div class="lesson-topic">
+        <h2>Chủ đề 2: Chủ nghĩa xã hội từ năm 1917 đến nay</h2>
+        <div class="lessons-grid">
+          <div class="lesson-card" onclick="openLesson(1)">
+            <h3>Bài 3: Sự hình thành Liên bang Cộng hòa xã hội chủ nghĩa Xô Viết</h3>
+            <p class="muted">⏱ 40 phút</p>
+            <a class="btn-outline">Vào học</a>
+          </div>
+
+          <div class="lesson-card disabled">
+            <h3>Bài 4: Sự phát triển của chủ nghĩa xã hội từ sau chiến tranh thế giới thứ hai đến nay</h3>
+            <p class="muted">⏱ 40 phút</p>
+            <a class="btn-outline">Sắp cập nhật</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chủ đề 3 -->
+      <div class="lesson-topic">
+        <h2>Chủ đề 3: Quá trình giành độc lập dân tộc của các quốc gia Đông Nam Á</h2>
+        <div class="lessons-grid">
+          <div class="lesson-card disabled">
+            <h3>Bài 5: Quá trình xâm lược và cai trị của chủ nghĩa thực dân ở Đông Nam Á</h3>
+            <p class="muted">⏱ 40 phút</p>
+            <a class="btn-outline">Sắp cập nhật</a>
+          </div>
+
+          <div class="lesson-card disabled">
+            <h3>Bài 6: Hành trình đi đến độc lập dân tộc ở Đông Nam Á</h3>
+            <p class="muted">⏱ 40 phút</p>
+            <a class="btn-outline">Sắp cập nhật</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chủ đề 4 -->
+      <div class="lesson-topic">
+        <h2>Chủ đề 4: Chiến tranh bảo vệ Tổ quốc & chiến tranh giải phóng dân tộc Việt Nam</h2>
+        <div class="lessons-grid">
+          <div class="lesson-card disabled">
+            <h3>Bài 7: Khái quát về chiến tranh bảo vệ Tổ quốc trong lịch sử Việt Nam</h3>
+            <p class="muted">⏱ 40 phút</p>
+            <a class="btn-outline">Sắp cập nhật</a>
+          </div>
+
+          <div class="lesson-card disabled">
+            <h3>Bài 8: Một số cuộc khởi nghĩa và chiến tranh giải phóng trong lịch sử Việt Nam</h3>
+            <p class="muted">⏱ 40 phút</p>
+            <a class="btn-outline">Sắp cập nhật</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chủ đề 5 -->
+      <div class="lesson-topic">
+        <h2>Chủ đề 5: Một số cuộc cải cách lớn trong lịch sử Việt Nam</h2>
+        <div class="lessons-grid">
+          <div class="lesson-card disabled">
+            <h3>Bài 9: Cuộc cách mạng của Hồ Quý Ly và Triều Hồ (đầu thế kỉ XV)</h3>
+            <p class="muted">⏱ 40 phút</p>
+            <a class="btn-outline">Sắp cập nhật</a>
+          </div>
+
+          <div class="lesson-card disabled">
+            <h3>Bài 10: Cuộc cải cách của Lê Thánh Tông (thế kỉ XV)</h3>
+            <p class="muted">⏱ 40 phút</p>
+            <a class="btn-outline">Sắp cập nhật</a>
+          </div>
+
+          <div class="lesson-card disabled">
+            <h3>Bài 11: Cuộc cải cách của Minh Mạng (nửa đầu thế kỉ XIX)</h3>
+            <p class="muted">⏱ 40 phút</p>
+            <a class="btn-outline">Sắp cập nhật</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chủ đề 6 -->
+      <div class="lesson-topic">
+        <h2>Chủ đề 6: Lịch sử bảo vệ chủ quyền và lợi ích hợp pháp của Việt Nam ở Biển Đông</h2>
+        <div class="lessons-grid">
+          <div class="lesson-card disabled">
+            <h3>Bài 12: Vị trí và tầm quan trọng của Biển Đông</h3>
+            <p class="muted">⏱ 40 phút</p>
+            <a class="btn-outline">Sắp cập nhật</a>
+          </div>
+
+          <div class="lesson-card disabled">
+            <h3>Bài 13: Việt Nam và Biển Đông</h3>
+            <p class="muted">⏱ 40 phút</p>
+            <a class="btn-outline">Sắp cập nhật</a>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Back home -->
+      <a href="index.html" class="back-home-btn">← Quay về trang chủ</a>
+    </main>
+  </body>
+  <script src="script/l1.js"></script>
+  <script src="script/h1.js"></script>
+</html>

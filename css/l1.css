@@ -1,0 +1,324 @@
+/* FIX lỗi tràn ngang khiến navbar bị lệch */
+html, body {
+    overflow-x: hidden !important;
+    margin: 0;
+    padding: 0;
+}
+
+/* ======= HERO BACKGROUND ======= */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url("../img/lich-su.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 40px;
+    color: #fff;
+}
+
+/* Overlay làm sáng ảnh hơn */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* giảm từ 0.45 → 0.25 để không che ảnh */
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+/* Nội dung hero */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 22px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.btn-primary { background: #1d3dd8; color: white; }
+.btn-outline { background: transparent; border: 2px solid #ffffff; color: #ffffff; }
+
+/* ======= POPUP ======= */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* đảm bảo popup nằm trên hero */
+}
+
+.modal-content {
+    background: white;
+    width: 350px; /* nhỏ gọn hơn */
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Buttons lớp */
+.grade-btn {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.g10 { background: #b043f0; }
+.g11 { background: #1882ff; }
+.g12 { background: #1cbf47; }
+
+.close-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ======= RESPONSIVE ======= */
+
+@media (max-width: 900px) {
+    .hero-content h1 { font-size: 36px; }
+    .hero { padding: 0 25px; }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 0 20px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero-content h1 { font-size: 28px; }
+    .hero-content p { font-size: 16px; }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .modal-content {
+        width: 80%; /* co nhỏ popup trên mobile */
+    }
+}
+/* ===== NAVBAR CHUẨN ===== */
+.navbar {
+    width: 100%;
+    background: white;
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+/* Group trái */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Logo */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1d3dd8;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Menu */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-size: 15px;
+    padding: 4px 0;
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: #1d3dd8;
+}
+
+/* Group phải */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Ô tìm kiếm */
+.search-box {
+    padding: 7px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 180px;
+}
+
+/* Nút đăng nhập */
+.login-btn {
+    padding: 8px 18px;
+    background: #1d3dd8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 50px;   /* Căn phải tuyệt đẹp */
+}
+
+
+.login-btn:hover {
+    background: #1533b3;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .search-box {
+        width: 130px;
+    }
+}
+
+@media (max-width: 750px) {
+    .nav-links {
+        display: none;
+    }
+    .search-box {
+        display: none;
+    }
+}
+/* ===== THÔNG ĐIỆP ===== */
+.intro {
+    text-align: center;
+    padding: 90px 20px;
+    background-color: #1e61ff;
+}
+.intro h2 {
+    font-size: 38px;
+    font-weight: bold;
+    color: #fff;
+}
+.intro p {
+    font-size: 18px;
+    color: #f5f5f5;
+    margin-bottom: 20px;
+}
+.btn-group .btn { margin: 5px; }
+
+/* ===== CAM KẾT VIDEO AI ===== */
+.quality {
+    text-align: center;
+    padding: 70px 20px;
+    background: #f8f8f8;
+}
+.quality-items {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+}
+.q-item {
+    width: 250px;
+}
+.q-item img {
+    height: 60px;
+}
+.video-count {
+    font-size: 50px; 
+    color: #1d3dd8;
+    font-weight: bold;
+}
+
+/* ===== FEEDBACK ===== */
+.feedback {
+    padding: 70px 20px;
+    text-align: center;
+}
+.fb-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+.fb-card {
+    width: 260px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+.fb-avatar {
+    width: 60px;
+    border-radius: 50%;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #0f1a4a;
+    color: white;
+    padding: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+.footer a { cursor: pointer; display: block; margin: 5px 0; color: #ddd; }
+.footer a:hover { color: white; }
+
+/* RESPONSIVE */
+@media(max-width:800px){
+    .quality-items, .fb-container, .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+

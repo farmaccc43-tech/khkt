@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang chủ - Lịch Sử Online</title>
+
+    <!-- CSS tách riêng -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="nav-left">
+        <a class="logo" href="index.html">Lịch Sử Online</a>
+
+        <nav class="nav-links">
+          <a href="index.html">Trang chủ</a>
+          <a href="#" onclick="requireLogin('homepage10.html')">Lớp 10</a>
+          <a href="#" onclick="requireLogin('homepage11.html')">Lớp 11</a>
+          <a href="#" onclick="requireLogin('homepage12.html')">Lớp 12</a>
+
+          <a href="#">Video AI</a>
+          <a href="#">Kiểm tra</a>
+          <a href="#">Tài liệu</a>
+        </nav>
+      </div>
+
+      <div class="nav-right">
+        <input
+          type="text"
+          placeholder="Tìm kiếm bài học..."
+          class="search-box"
+        />
+        <div id="userPanel"></div>
+      </div>
+    </header>
+
+    <!-- ======= HERO SECTION ======= -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Khám Phá Lịch Sử Việt Nam<br />Cùng Video AI</h1>
+        <p>
+          Học lịch sử trực quan và sinh động với các video AI được chọn lọc kỹ
+          càng.
+        </p>
+        <button id="startBtn" class="btn btn-primary">Bắt đầu học ngay</button>
+      </div>
+    </section>
+    <!-- ======= THÔNG ĐIỆP / CHÚNG TÔI LÀ AI ======= -->
+    <section class="intro">
+      <h2>Sẵn Sàng Khám Phá Lịch Sử?</h2>
+      <p>
+        Tham gia cùng hàng ngàn học sinh đang học lịch sử hiệu quả với video AI
+      </p>
+      <div class="btn-group">
+        <button class="btn btn-primary" onclick="requireLogin()">
+          Đăng ký miễn phí
+        </button>
+        <button class="btn btn-outline"  id="btn1">Tìm hiểu thêm</button>
+      </div>
+    </section>
+
+    <!-- ======= CAM KẾT VIDEO AI ======= -->
+    <section class="quality">
+      <h2>Cam Kết Chất Lượng Video AI</h2>
+      <p>
+        Mỗi video đều được kiểm duyệt kỹ lưỡng để đảm bảo tính chính xác và phù
+        hợp.
+      </p>
+
+      <div class="quality-items">
+        <div class="q-item">
+          <img src="img/icon_teacher.png" alt="teacher" />
+          <h3>Được giáo viên phê duyệt</h3>
+          <p>
+            Đội ngũ giáo viên lịch sử giàu kinh nghiệm kiểm duyệt từng video
+          </p>
+        </div>
+
+        <div class="q-item">
+          <img src="img/icon_shield.png" alt="shield" />
+          <h3>Tái hiện lịch sử chính xác</h3>
+          <p>Dựa trên tài liệu lịch sử đáng tin cậy và nghiên cứu khoa học</p>
+        </div>
+
+        <div class="q-item">
+          <img src="img/icon_school.png" alt="school" />
+          <h3>Phù hợp độ tuổi THPT</h3>
+          <p>
+            Nội dung được điều chỉnh phù hợp với tâm lý và nhận thức học sinh
+          </p>
+        </div>
+      </div>
+
+      <h1 class="video-count">1,000+</h1>
+      <p>video được tuyển chọn từ 10,000+ video AI</p>
+    </section>
+
+    <!-- ======= FEEDBACK HỌC SINH ======= -->
+    <section class="feedback">
+      <h2>Học Sinh Nói Gì Về Chúng Tôi</h2>
+      <p>Phản hồi từ các học sinh về trải nghiệm học với video AI</p>
+
+      <div class="fb-container">
+        <div class="fb-card">
+          <img src="img/student1.png" class="fb-avatar" />
+          <h4>Nguyễn Minh Anh</h4>
+          <p>Học sinh lớp 11A2 ⭐⭐⭐⭐⭐</p>
+          <span>"Video AI giúp em hiểu rõ hơn về bối cảnh lịch sử..."</span>
+        </div>
+
+        <div class="fb-card">
+          <img src="img/student1.png" class="fb-avatar" />
+          <h4>Trần Đức Thành</h4>
+          <p>Học sinh lớp 12B1 ⭐⭐⭐⭐⭐</p>
+          <span>"Giờ có video AI mô phỏng trận Điện Biên Phủ..."</span>
+        </div>
+
+        <div class="fb-card">
+          <img src="img/student1.png" class="fb-avatar" />
+          <h4>Lê Thị Hương</h4>
+          <p>Học sinh lớp 10C3 ⭐⭐⭐⭐⭐</p>
+          <span>"Em thích nhất là video về kim tự tháp Ai Cập..."</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= FOOTER ======= -->
+    <footer class="footer">
+      <div class="f-box">
+        <h3>Lịch Sử Online</h3>
+        <p>Nền tảng học lịch sử THPT với video AI chất lượng cao.</p>
+      </div>
+      <div class="f-box">
+        <h3>Danh mục học tập</h3>
+        <a onclick="requireLogin()">Lịch sử lớp 10</a>
+        <a onclick="requireLogin()">Lịch sử lớp 11</a>
+        <a onclick="requireLogin()">Lịch sử lớp 12</a>
+      </div>
+      <div class="f-box">
+        <h3>Liên hệ & Hỗ trợ</h3>
+        <p>Email: support@lichsuonline.vn</p>
+        <p>Hotline: 1900.1234</p>
+      </div>
+    </footer>
+
+    <!-- ======= POPUP CHỌN KHỐI ======= -->
+    <div class="modal" id="gradeModal">
+      <div class="modal-content">
+        <h3>Chọn khối lớp để bắt đầu</h3>
+
+        <button class="grade-btn g10" onclick="requireLogin('homepage10.html')">
+          Lớp 10
+        </button>
+
+        <button class="grade-btn g11" onclick="requireLogin('homepage11.html')">
+          Lớp 11
+        </button>
+        <button class="grade-btn g12" onclick="requireLogin('homepage12.html')">
+          Lớp 12
+        </button>
+
+        <button id="closeModal" class="close-btn">Đóng</button>
+      </div>
+    </div>
+
+    <!-- Script riêng -->
+    <script src="script/auth.js"></script>
+    <script src="script/script.js"></script>
+  </body>
+</html>
