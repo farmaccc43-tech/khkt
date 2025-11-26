@@ -77,6 +77,10 @@ document.getElementById("exerciseBtn")?.addEventListener("click", () => {
         }
       }
 
+document.getElementById("mindmapBtn").addEventListener("click", function () {
+    window.location.href = "mindmap.html";
+});
+
 
 // RUN
 updateUI();

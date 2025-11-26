@@ -12,8 +12,7 @@ document.getElementById("quizForm")?.addEventListener("submit", function (e) {
     localStorage.setItem("exerciseFinished", "true");
     localStorage.setItem("exerciseScore", score);
 
-    alert("Bạn được: " + score + "/10 điểm 😍");
-
-    // Quay lại trang học
-    window.location.href = "ls1l10.html";
+    // Hiện bảng điểm
+    document.querySelector(".score-popup .result").textContent = score + "/10";
+    document.querySelector(".score-popup").classList.add("show");
 });

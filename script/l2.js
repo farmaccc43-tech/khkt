@@ -76,6 +76,9 @@ document.getElementById("exerciseBtn")?.addEventListener("click", () => {
           window.location.href = "ls2l12.html";
         }
       }
+document.getElementById("mindmapBtn").addEventListener("click", function () {
+    window.location.href = "mindmap2.html";
+});
 
 
 // RUN

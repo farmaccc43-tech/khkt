@@ -60,3 +60,57 @@ label {
     margin-bottom: 6px;
     cursor: pointer;
 }
+.score-popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.score-popup.show {
+    display: flex;
+}
+
+.popup-box {
+    background: #fff;
+    padding: 25px 35px;
+    border-radius: 12px;
+    text-align: center;
+    animation: zoomIn 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.popup-box h2 {
+    color: #2b7cff;
+    margin-bottom: 10px;
+}
+
+.popup-box .result {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 15px;
+}
+
+.popup-box button {
+    padding: 10px 20px;
+    border: none;
+    background: #2b7cff;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.popup-box button:hover {
+    background: #1d5ccc;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.6); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
