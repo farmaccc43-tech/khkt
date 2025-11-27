@@ -79,6 +79,22 @@ document.getElementById("exerciseBtn")?.addEventListener("click", () => {
 document.getElementById("mindmapBtn").addEventListener("click", function () {
     window.location.href = "mindmap3.html";
 });
+  const videoBtn = document.getElementById("videoBtn");
+  const popup = document.getElementById("videoPopup");
+  const closeBtn = document.getElementById("closeVideo");
+  const video = document.getElementById("videoAI");
+
+  videoBtn.onclick = () => {
+    popup.style.display = "flex";
+    video.play();
+  };
+
+  closeBtn.onclick = () => {
+    popup.style.display = "none";
+    video.pause();
+    video.currentTime = 0;
+  };
+
 
 
 // RUN
